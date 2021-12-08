@@ -1,0 +1,196 @@
+/*Foco*/
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+
+/*hover*/
+
+nav ul li a:hover{
+    font-size: 20px;
+    color: #ffffff;
+} 
+footer .rodape:hover{
+    color: #ffffff;
+}
+footer li a:hover{
+    color: #ffffff;
+}
+button:hover {
+    background: 0; /* Green */
+    color: #052d50;
+    font-weight: 800;
+    border:3px solid #052d50;
+}
+/*Configuração da página*/
+html, body{
+    height: 100%;
+    line-height: 1.3em;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+nav{
+    z-index:4;
+    display: block;
+    overflow: auto;
+    background-color: rgb(41 43 48 / 80%);
+    width: 100%;
+    height: 60px;
+    position: fixed;
+}
+main{
+    flex: 1 0 auto;
+    padding-top: 4.5em;
+    background: url("https://imagensemoldes.com.br/wp-content/uploads/2020/07/Riscos-%C3%82ncora-PNG.png") no-repeat center center/540px fixed;
+    background-color: #b7c4cf;
+}
+footer{
+    background-color: rgb(41, 43, 48);
+    width: 100%;
+    height: auto;
+}
+nav a{
+    height: 60px;
+    float: left;
+}
+img{
+    height: 100%;
+}
+input{
+    border: #052d50;
+    color:rgb(255, 255, 255);
+    background:#052d50a2;
+    margin-top: .9em;
+    padding-left: 10px;
+    border-radius: 10px;
+    height: 1.9rem;
+    width: 50%;
+}
+#ultimosAjustes{
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+nav ul li a{    
+    float:right;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 40px;
+    display: block;
+    margin-top: 20px;
+    font-family: sans-serif;
+    font-size: 15px;
+    color: #7ba1c4;
+} 
+table{
+    width: 100%;
+	margin-bottom : .5em;
+    table-layout: fixed;
+}
+
+td, th{
+	padding: .7em;
+    margin: 0;
+    border: 1px solid #f0f1f1;
+    border-left-width: 0px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    background: #0d233699;
+    color:antiquewhite;
+    text-align: left;
+	font-family:"SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    line-height: 1.125;
+    font-weight: 600;
+    letter-spacing: .004em;
+}
+td a{
+    display: inline;
+    color:antiquewhite;
+    text-align: center;
+    font-family:"SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    line-height: 1.125;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .004em;
+}
+th{
+	border-left-width: 0px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    font-weight: bold;
+    background-color: #d4dde5c7; 
+    color: #3b5a75;
+    border-color: #f0f1f1;  
+	text-align: left;
+}
+footer selection address{
+    text-align: center;
+    padding-top: 1%;
+    color: white;
+    font-size: 15px;
+    font-family: sans-serif;
+} 
+footer ul{
+    margin-left: 30px;
+    font-family: fantasy;
+    font-size: 15px;
+    color: #92908a7a;
+}
+footer .rodape a{
+    font-family: fantasy;
+    font-size: 15px;
+    color: #92908a7a;
+}
+h1{
+	text-align: center;
+    font-size: revert;
+    height: auto;
+    font-family:"SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    line-height: 1.125;
+    font-weight: 600;
+    letter-spacing: .004em;
+    color: white;
+}
+button{
+	cursor: pointer ;
+	background: #052d50;
+	transition-duration: 0.4s;
+    border-radius: 6px;
+    border:0px;
+   	color: white;
+    width: 96px;
+    height: 46px;
+    font-weight: 600;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.rodape{
+    padding-bottom: .3%;
+    margin: 5px;
+    font-family: fantasy, serif;
+    font-size: 15px;
+    color: #92908a7a;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.exibicao{
+    background-color: #052d50cf;
+    height: auto;
+    width: 50%;  
+    margin: auto; 
+    border-radius: 20px;
+    box-shadow: -2px 0px 11px 0px;
+    padding: 8% 8% 3%;
+}
+.linha{
+    width: 1150px;
+    margin-top: 20px;
+    box-shadow: 1px 5px 20px 4px;
+}
