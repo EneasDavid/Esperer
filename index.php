@@ -1,15 +1,14 @@
 <?php
 //Inicializar o php: php -S localhost:8000
 error_reporting(E_ERROR | E_PARSE);
-include_once 'app_controller.php';
-include_once 'action/listar_produto_id.php';
+include_once 'modules/app_controller.php';
+include_once 'modules/action/listar_produto_id.php';
 $id = $_GET['id'];
 if(isset($id)){
-$listarProdutoCommand = new ListarProdutoPorIdCommand($produtooService);
-$produto = $listarProdutoCommand->execute($id);
-//$produto = $produtoService->pegaProdutoPorId($id);
+     $listarProdutoCommand = new ListarProdutoPorIdCommand($produtoService);
+     $produto = $listarProdutoCommand->execute($id);
+    // $produto = $produtoService->pegaProdutoPorId($id);
 }
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,9 +18,6 @@ $produto = $listarProdutoCommand->execute($id);
         <link rel="stylesheet" href="CSS/zerar.css">
         <link rel="stylesheet" href="CSS/style.css">
         <script src="https://kit.fontawesome.com/9d829953b5.js" crossorigin="anonymous"></script>
-        <style>
-            p.mensagem{animation: fadeOut ease 8s;}
-        </style>
     <head>
     <body>
         <header>
@@ -29,7 +25,7 @@ $produto = $listarProdutoCommand->execute($id);
                  <a href="https://lojaesperer.kyte.site/"><img src="IMG/logo.png" alt=""><a>
                  <ul style="margin-right: 20px;">
                      <li><a href="mailto:boutique.esperer@gmail.com?Subject=Ola%20gostarai%20de%20falar%20com%20voces" title="produto"><i class="fas fa-phone-alt"></i></a></li>
-                     <li><a href="ListaProdutos.php" title="Lista de Produtos"><i class="fas fa-list-ol"></i></a></li>
+                     <li><a href="ListaProdutos.php?acao=listarProdutos" title="Lista de Produtos"><i class="fas fa-list-ol"></i></a></li>
                  </ul>
             </nav>
         </header>
@@ -38,7 +34,7 @@ $produto = $listarProdutoCommand->execute($id);
                 <div>
                     <h1>Cadastro</h1>
                     <div style="margin: auto;margin-top: 8%;">
-                        <form action="/modules/app_controller.php" method="POST"> <!-post pra não ter retorno na barra de pesquisa->
+                        <form action="modules/app_controller.php" method="POST">
                         <input type="text" name="nome" style="width: 75%;" placeholder="Digite o nome da peça" value=<?=(is_null($produto) ? '' : "{$produto->getNome()}")?>>
                         <input type="hidden" name="id" id="id" value=<?=(is_null($produto) ? '' : "{$produto->getId()}")?>>
                         <input type="hidden" name="acao" id="acao"   value=<?=(is_null($produto) ? 'cadastrarProduto' : 'atualizarProduto')?>>

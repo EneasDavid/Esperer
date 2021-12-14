@@ -2,14 +2,14 @@
 
 class CadastrarProdutoCommand{
 
-    private ProdutoService $ProdutoService;
+    private ProdutoService $produtoService;
 
-    public function __construct(ProdutoService $ProdutoService){
-        $this->ProdutoService = $ProdutoService;
+    public function __construct(ProdutoService $produtoService){
+        $this->produtoService = $produtoService;
     }
 
-    public function execute(Produto $Produto):void{
-        $this->ProdutoService->cadastrarProduto($Produto);
+    public function execute(Produto $produto):void{
+        $this->produtoService->cadastrarProduto($produto);
     }
 }
 ?>

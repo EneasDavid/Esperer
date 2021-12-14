@@ -1,14 +1,13 @@
 <?php 
     class ListarProdutoPorIdCommand{
 
-        private ProdutoService $ProdutoService;
+        private ProdutoService $podutoService;
 
-    public function __construct(ProdutoService $ProdutoService){
-        $this->ProdutoService = $ProdutoService;
-    }
-
-    public function execute($id):Produto{
-        return $this->ProdutoService->pegaProdutoPorId($id);
-    }
+        public function __construct(ProdutoService $produtoService){
+            $this->produtoService = $produtoService;
+        }
+        public function execute($id):Produto{
+            return $this->produtoService->pegaProdutoPorId($id);
+        }
     }
 ?>

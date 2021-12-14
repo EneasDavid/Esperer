@@ -1,15 +1,15 @@
 <?php
 class RemoverProdutoCommand{
-    private ProdutoService $ProdutoService;
+    private ProdutoService $produtoService;
 
-    public function __construct(ProdutoService $ProdutoService){
-        $this->ProdutoService = $ProdutoService;
+    public function __construct(ProdutoService $produtoService){
+        $this->produtoService = $produtoService;
     }
 
     public function execute($id){
-         $this->ProdutoService->removerProduto($id);
+         $this->produtoService->removerProduto($id);
          $mensagem = "Produto removido com sucesso!";
-         header("Location: http://localhost:9000/lista-Produtos.php?acao=listarProdutos&m={$mensagem}");
+         header("Location: http://localhost:8000/ListaProdutos.php?acao=listarProdutos&m={$mensagem}");
         }
 
 }

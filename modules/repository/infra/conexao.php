@@ -20,7 +20,7 @@ class Conexao{
         if($this->connection->connect_error){
             die("Conexão Falhou! =[ ".$this->connection->connect_error);
         }
-       // echo "Conectado com sucesso!";
+       //echo "Conectado com sucesso!";
         return $this->connection;
     }
 

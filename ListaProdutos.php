@@ -1,14 +1,7 @@
 <?php
 //error_reporting(E_ERROR | E_PARSE);
-include_once 'app_controller.php';
-include_once 'action/listar_produto_id.php';
-$id = $_GET['id'];
-if(isset($id)){
-$listarProdutoCommand = new ListarProdutoPorIdCommand($produtooService);
-$produto = $listarProdutoCommand->execute($id);
-//$produto = $produtoService->pegaProdutoPorId($id);
-}
-
+require_once 'modules/service/produto_service.php';
+include_once 'modules/app_controller.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,7 +12,7 @@ $produto = $listarProdutoCommand->execute($id);
         <link rel="stylesheet" href="CSS/zerar.css">
         <link rel="stylesheet" href="CSS/style.css">
         <script src="https://kit.fontawesome.com/9d829953b5.js" crossorigin="anonymous"></script>
-    <head>
+        <head>
     <body>
          <header>
              <nav>
@@ -31,6 +24,10 @@ $produto = $listarProdutoCommand->execute($id);
             </nav>
         </header>
         <main>
+        <?php
+            $listaDeProdutos = $produtos;
+        ?>
+
             <div class="exibicao">
                 <div>
                     <h1>Lista de Produtos</h1>
@@ -42,20 +39,23 @@ $produto = $listarProdutoCommand->execute($id);
                                 <th>Peça</th>
                                 <th>Quantidade</th>
                                 <th>Valor</th>
-                                <th>Ajuste</th>
+                                <th colspan="2" id="tabela-produto-acao">Ajuste</th>
                             </tr>
                         </thead>
-                          <c:forEach var = "Produtos" items = "${produtos}">
-                            <tr class="peca">
-                                <td>${Produtos.id}</td>
-                                <td>${Produtos.peca}</td>
-                                <td>${Produtos.quantidade}</td>
-                                <td>R$ ${Produtos.preco}</td>
-                                <td><a href="AtualizarProdutos.HTML">Editar</a> | <a href="ProdutoServlet?acao=excluir&id=${Produtos.id}">Excluir</a></td>
-                            </tr>
-						</c:forEach>
-                </table>
-                    
+                        <tbody>
+                         <?php foreach ($listaDeProdutos as $produto){
+                          ?>         
+                         <tr>
+                         <td><?=$produto->getId() ?></td>
+                         <td><?=$produto->getNome() ?></td>
+                         <td><?=$produto->getPreco() ?></td>
+                         <td><?=$produto->getQuantidade() ?></td>
+                         <td><a href=<?="index.php?id={$produto->getId()}" ?>>Editar</a></td>
+                         <td><a href=<?="modules/app_controller.php?acao=removerProduto&id={$produto->getId()}" ?>>Remover</a></td>           
+                         </tr>
+                         <?php }?>
+                        </tbody>
+                    </table>                 
                     </div>
                 </div>
                 <div style="height: 20px;"></div>

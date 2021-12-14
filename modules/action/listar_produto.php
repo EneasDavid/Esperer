@@ -1,14 +1,14 @@
 <?php
 class ListarProdutoCommand{
     
-    private ProdutoService $ProdutoService;
+    private ProdutoService $produtoService;
 
-    public function __construct(ProdutoService $ProdutoService){
-        $this->ProdutoService = $ProdutoService;
+    public function __construct(ProdutoService $produtoService){
+        $this->produtoService = $produtoService;
     }
 
     public function execute(){
-        return $this->ProdutoService->listarProdutos();
+        return $this->produtoService->listarProdutos();
     }
 }
 ?>

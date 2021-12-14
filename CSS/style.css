@@ -44,6 +44,7 @@ nav{
 main{
     flex: 1 0 auto;
     padding-top: 4.5em;
+    padding-bottom: 5rem;
     background: url("https://imagensemoldes.com.br/wp-content/uploads/2020/07/Riscos-%C3%82ncora-PNG.png") no-repeat center center/540px fixed;
     background-color: #b7c4cf;
 }

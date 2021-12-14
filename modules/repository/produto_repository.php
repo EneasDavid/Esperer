@@ -9,9 +9,9 @@ class ProdutoRepository{
         $this->conexao = $conexao;
     }
 
-    public function salvarProduto(Produto $Produto){
+    public function salvarProduto(Produto $produto){
         $mysql_con = $this->conexao->conecta();
-        $query = "insert into Produto(nome, quantidade, preco) values ('{$Produto->getNome()}','{$Produto->getQuantidade()}','{$Produto->getPreco()}')";
+        $query = "insert into Produto(nome, quantidade, preco) values ('{$produto->getNome()}','{$produto->getQuantidade()}','{$produto->getPreco()}')";
         $sucesso = $mysql_con->query($query);
         
         if($sucesso === TRUE){
@@ -27,7 +27,7 @@ class ProdutoRepository{
 
 
     public function listarProdutos():array{
-        $query = "select id, nome, quantidade ,preco from Produto";       
+        $query = "select id, nome, quantidade, preco from produto;";       
         $mysql_con = $this->conexao->conecta();
         $resultSet = $mysql_con->query($query);
 
@@ -35,11 +35,11 @@ class ProdutoRepository{
 
         if($resultSet->num_rows > 0){
             while ($linha = $resultSet->fetch_assoc()) {
-                $Produto = new Produto( $linha['nome'],$linha['quantidade'],$linha['preco']);
-                $Produto->setId($linha['id']);
+                $produto = new Produto( $linha['nome'],$linha['quantidade'],$linha['preco']);
+                $produto->setId($linha['id']);
                 
                 
-                array_push($Produtos, $Produto);
+                array_push($Produtos, $produto);
             }
         }
             return $Produtos;
@@ -64,7 +64,7 @@ class ProdutoRepository{
 
     public function pegaPorId(int $id):Produto{
         $mysql_con = $this->conexao->conecta();
-        $query = "select id, nome, quantidade, preco from Produto where id={$id}";
+        $query = "select id, nome, quantidade, preco from Produto where id=$id;";
         $resultSet = $mysql_con->query($query);
         $Produto = null;
         if($resultSet->num_rows > 0){
@@ -82,7 +82,7 @@ class ProdutoRepository{
 
     public function removerProduto($id):bool{
         $mysql_con = $this->conexao->conecta();
-        $query = "delete from Produto where id='{$id}'";
+        $query = "delete from Produto where id='$id';";
         $sucesso = $mysql_con->query($query);
 
        /* if($resultSet === TRUE){
