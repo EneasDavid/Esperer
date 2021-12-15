@@ -8,7 +8,7 @@ include_once 'modules/app_controller.php';
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<link rel="icon" href="logo topo.jpeg" type="image/x-icon">
+	<link rel="icon" href="IMG/logo topo.jpeg" type="image/x-icon">
         <title>Lista de Produtos</title>
         <link rel="stylesheet" href="CSS/zerar.css">
         <link rel="stylesheet" href="CSS/style.css">
@@ -17,7 +17,7 @@ include_once 'modules/app_controller.php';
     <body>
          <header>
              <nav>
-                 <a href="https://lojaesperer.kyte.site/"><img src="logo.png" alt=""><a>
+                 <a href="https://lojaesperer.kyte.site/"><img src="IMG/logo.png" alt=""><a>
                  <ul style="margin-right: 20px;">
                      <li><a href="mailto:boutique.esperer@gmail.com?Subject=Ola%20gostarai%20de%20falar%20com%20voces" title="Contato"><i class="fas fa-phone-alt"></i></a></li>
                      <li><a href="index.php" title="Cadastrar Produtos"><i class="fas fa-home"></i></a></li>
