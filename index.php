@@ -44,7 +44,7 @@ if(isset($id)){
                                  <input type="number" name="preco" step="0.010" placeholder="Digite o preço de venda" value=<?=(is_null($produto) ? '' : "{$produto->getPreco()}")?>>
                             </div>
                             <div>
-                                 <button id="cadastrar-peca" type="submit">Cadastrar</button>
+                                 <button id="cadastrar-peca" type="submit"><?=(is_null($produto) ? 'Cadastrar' : 'Atualizar')?></button>
                             </div>
                         </div>
                         </from>

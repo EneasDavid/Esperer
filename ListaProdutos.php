@@ -1,4 +1,5 @@
 <?php
+//truncate produto; -- zerar tableta no termianou
 //error_reporting(E_ERROR | E_PARSE);
 require_once 'modules/service/produto_service.php';
 include_once 'modules/app_controller.php';
@@ -30,8 +31,8 @@ include_once 'modules/app_controller.php';
 
             <div class="exibicao">
                 <div>
-                    <h1>Lista de Produtos</h1>
-                   	<div style="margin: 50px;">
+                    <h1 style="padding: 3%;">Lista de Produtos</h1>
+                   	<div style="display:flex;flex-direction: column;align-items: center;justify-content: space-between;">
                     <table>
                         <thead>
                             <tr>
@@ -39,7 +40,7 @@ include_once 'modules/app_controller.php';
                                 <th>Peça</th>
                                 <th>Quantidade</th>
                                 <th>Valor</th>
-                                <th colspan="2" id="tabela-produto-acao">Ajuste</th>
+                                <th colspan="2" id="tabela-produto-acao" style="text-align: center;width: auto;">Ajuste</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -48,8 +49,8 @@ include_once 'modules/app_controller.php';
                          <tr>
                          <td><?=$produto->getId() ?></td>
                          <td><?=$produto->getNome() ?></td>
-                         <td><?=$produto->getPreco() ?></td>
                          <td><?=$produto->getQuantidade() ?></td>
+                         <td><?=$produto->getPreco() ?></td>
                          <td><a href=<?="index.php?id={$produto->getId()}" ?>>Editar</a></td>
                          <td><a href=<?="modules/app_controller.php?acao=removerProduto&id={$produto->getId()}" ?>>Remover</a></td>           
                          </tr>
